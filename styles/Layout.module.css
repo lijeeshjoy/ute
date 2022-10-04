@@ -1,4 +1,24 @@
-.footercontainer{
-    background-color: bisque;
-    color: black;
-}
+.appbar:hover {
+    background-color: white !important;
+    color: green
+  }
+  
+  .appbar:hover .appbarbasegrid .appbargridcontainer .appbarleftgrid .appbarleftcontainer .appbarbutton .buybutton {
+    color: green !important;
+    border: 1px solid green !important;
+  }
+  
+  .footercontainer {
+    background-color: "#000";
+    color: "#fff";
+  }
+
+  .hoverText:hover {
+    text-decoration: underline;
+    text-decoration-color: #1a3c34;
+    text-underline-offset: 2px;
+  }
+  
+  .customPopover :global(.MuiPopover-paper) {
+    width: -webkit-fill-available;
+  }

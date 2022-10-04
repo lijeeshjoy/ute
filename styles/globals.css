@@ -2,8 +2,9 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: #fff !important;
+  /* height: 100%; */
+  -webkit-font-smoothing: antialiased;
 }
 
 a {
@@ -15,12 +16,140 @@ a {
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+b {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+
+.navBarSlideIn {
+  transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  -webkit-transform: translateY(-100%);
+  -moz-transform: translateY(-100%);
+  -o-transform: translateY(-100%);
+  animation: animate-top 0.4s forwards;
+}
+
+.navBarSlideOut {
+  transform: translateY(0%);
+  -ms-transform: translateY(0%);
+  -webkit-transform: translateY(0%);
+  -moz-transform: translateY(0%);
+  -o-transform: translateY(0%);
+  animation: animate-out 0.4s forwards;
+}
+
+@keyframes animate-top {
+  100% {
+    transform: translateY(0%);
+    -ms-transform: translateY(0%);
+    -webkit-transform: translateY(0%);
+    -moz-transform: translateY(0%);
+    -o-transform: translateY(0%);
   }
-  body {
-    color: white;
-    background: black;
+}
+
+@keyframes animate-out {
+  100% {
+    transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    -webkit-transform: translateY(-100%);
+    -moz-transform: translateY(-100%);
+    -o-transform: translateY(-100%);
+  }
+}
+
+
+[data-aos="new-animation"] {
+  opacity: 0;
+  transition-property: transform, opacity;
+}
+
+[data-aos="new-animation"].aos-animate {
+  opacity: 1;
+}
+
+[data-aos="new-animation"] {
+  transform: rotate(360deg)
+}
+
+[data-aos="new-animation"].aos-animate {
+  transform: rotate(0deg)
+}
+
+
+@media all and (max-width: 1200px) {
+  #header {
+    display: none !important;
+  }
+}
+
+.textSlideIn {
+  transform: translateX(-100%);
+  animation: slide-right 0.4s forwards;
+}
+
+@keyframes slide-right {
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.alignHeaderCenter {
+  text-align: center;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@media all and (min-width:1240px) {
+  .animateImageChange {
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+    /* transition: opacity 500ms ease-out; */
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
   }
 }
